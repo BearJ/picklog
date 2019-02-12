@@ -1,0 +1,28 @@
+{
+  "name": "picklog",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "picklog": "index.js"
+  },
+  "author": "BearJ",
+  "license": "MIT",
+  "dependencies": {
+    "spawn-error-forwarder": "^1.0.0",
+    "through2": "^3.0.0"
+  },
+  "devDependencies": {
+    "dateformat": "^3.0.3",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BearJ/picklog.git"
+  }
+}
