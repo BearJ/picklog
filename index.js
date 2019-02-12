@@ -39,7 +39,7 @@ const map = {
   'N': '%N', // commit notes
 };
 const prettyFormat = `--pretty=${Object.values(map).join(SPLIT)}${END}`;
-const setting = require(path.resolve(__dirname, '.picklogrc.js'));
+const setting = require(path.resolve('.picklogrc.js'));
 
 function parse(commits){
   const parseCommits = [];
