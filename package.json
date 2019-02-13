@@ -15,7 +15,7 @@
     }
   },
   "bin": {
-    "picklog": "index.js"
+    "picklog": "./bin/picklog.js"
   },
   "author": "BearJ",
   "license": "MIT",
