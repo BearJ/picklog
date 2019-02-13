@@ -124,11 +124,7 @@ function picklog(args) {
           return commit;
         });
 
-        commits = setting.parse(parse(commits));
-
-        process.stdout.write(commits);
-
-        resolve(commits);
+        resolve(setting.parse(parse(commits)));
       });
   });
 }

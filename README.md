@@ -46,7 +46,7 @@ module.exports = {
 `parse` is the function that you can format your output with the logs you filter. 
 
 ### The structure of the `picklog`
-```json
+```
 [
   {
     "tag": "v0.0.3",
