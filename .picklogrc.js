@@ -30,13 +30,24 @@ module.exports = {
     let output = '';
 
     picklog.forEach((log) => {
-      output += `### [${log.tag}](${comparePath}${log.previousTag || ''}...${log.tag}) (${dateFormat(log.timestamp * 1000, 'yyyy-mm-dd')})\n`;
+      output += `### [${log.tag}](${comparePath}${log.previousTag || ''}...${log.tag}) (${dateFormat(log.timestamp * 1000, 'yyyy-mm-dd')})\n\n`;
 
       log.results.forEach((result) => {
         output += `#### ${result.filter.name}\n`;
 
         result.commits.forEach((commit) => {
-          output += `* ${commit.s}([${commit.h}](${commitPath}${commit.h}))\n`;
+          const regExp = result.filter.regExp;
+          let subject = commit.s.match(regExp) || '';
+
+          if(subject[1]){
+            const type = subject[1].match(/\((.*?)\)/)[1];
+
+            subject = `**${type}:** ${commit.s.replace(regExp, '')}`;
+          }else{
+            subject = commit.s.replace(regExp, '');
+          }
+
+          output += `* ${subject}([${commit.h}](${commitPath}${commit.h}))\n`;
         });
 
         output += '\n';
