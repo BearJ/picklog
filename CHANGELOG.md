@@ -1,3 +1,10 @@
+### [v0.3.2](https://github.com/BearJ/picklog/compare/v0.3.1...v0.3.2) (2019-02-13)
+
+#### Bugfixes
+* 修复bin的入口([3950ac5](https://github.com/BearJ/picklog/commit/3950ac5))
+
+
+
 ### [v0.3.1](https://github.com/BearJ/picklog/compare/v0.3.0...v0.3.1) (2019-02-13)
 
 
