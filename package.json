@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint **/*.js",
-    "changelog": "node ./bin/picklog.js > CHANGELOG.md",
-    "postversion": "npm run changelog && git add -A . && npm publish . && git push && git push --tags"
+    "changelog": "node ./bin/picklog.js > CHANGELOG.md && git add -A . ",
+    "postversion": "npm run changelog && git push && git push --tags && npm publish . "
   },
   "husky": {
     "hooks": {
@@ -32,5 +32,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BearJ/picklog.git"
-  }
+  },
+  "keywords": [
+    "changelog",
+    "git log",
+    "log",
+    "generate log"
+  ]
 }
