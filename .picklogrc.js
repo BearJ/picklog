@@ -1,5 +1,3 @@
-const dateFormat = require('dateformat');
-
 const origin = 'https://github.com/BearJ/picklog';
 const comparePath = `${origin}/compare/`;
 const commitPath = `${origin}/commit/`;
@@ -30,7 +28,10 @@ module.exports = {
     let output = '';
 
     picklog.forEach((log) => {
-      output += `### [${log.tag}](${comparePath}${log.previousTag || ''}...${log.tag}) (${dateFormat(log.timestamp * 1000, 'yyyy-mm-dd')})\n\n`;
+      let date = new Date(log.timestamp * 1000);
+      date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('' + date.getDate()).substr(-2)}`;
+
+      output += `### [${log.tag}](${comparePath}${log.previousTag || ''}...${log.tag}) (${date})\n\n`;
 
       log.results.forEach((result) => {
         output += `#### ${result.filter.name}\n`;

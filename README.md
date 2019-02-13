@@ -8,7 +8,7 @@ Pickup the logs that you filter, so you can generation changelog from it. You ca
 $ npm install --save-dev picklog
 ```
 
-- Add `.picklogrc.js` to your project.
+- Add `.picklogrc.js` to your project. More detail see below.
 
 - You can run it in Terminal like this:
 ```
@@ -29,11 +29,11 @@ module.exports = {
   filters: [
     {
       name: 'Features',
-      regExp: /^feat(\(.*?\))?:\s/i,
+      regExp: /^(?:feat|add)/i,
     },
     {
       name: 'Bugfixes',
-      regExp: /^fix(\(.*?\))?:\s/i,
+      regExp: /^fix/i,
     }
   ],
   parse(picklog){
@@ -76,4 +76,49 @@ module.exports = {
     "previousTag": "v0.0.2"
   }
 ]
-``` 
+```
+
+
+### I want Markdown
+If you want markdown output, you can use `.picklogrc.js` like this:
+
+```javascript
+const origin = 'https://github.com/your-project';
+const comparePath = `${origin}/compare/`;
+const commitPath = `${origin}/commit/`;
+
+module.exports = {
+  filters: [
+    {
+      name: 'Features',
+      regExp: /^(?:feat|add)/i,
+    },
+    {
+      name: 'Bugfixes',
+      regExp: /^fix/i,
+    }
+  ],
+  parse(picklog){
+    let output = '';
+
+    picklog.forEach((log) => {
+      let date = new Date(log.timestamp * 1000);
+      date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('' + date.getDate()).substr(-2)}`;
+      
+      output += `### [${log.tag}](${comparePath}${log.previousTag || ''}...${log.tag}) (${date})\n\n`;
+
+      log.results.forEach((result) => {
+        result.commits.forEach((commit) => {
+          output += `* ${commit.s}([${commit.h}](${commitPath}${commit.h}))\n`;
+        });
+
+        output += '\n';
+      });
+
+      output += '\n\n';
+    });
+
+    return output;
+  }
+};
+```
