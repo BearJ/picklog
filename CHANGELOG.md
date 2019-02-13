@@ -1,3 +1,7 @@
+### [v0.1.0](https://github.com/BearJ/picklog/compare/v0.0.3...v0.1.0) (2019-02-13)
+
+
+
 ### [v0.0.3](https://github.com/BearJ/picklog/compare/v0.0.2...v0.0.3) (2019-02-13)
 
 #### Bugfixes
