@@ -2,40 +2,14 @@ const path = require('path');
 const through2 = require('through2');
 const { spawn } = require('child_process');
 const fwd = require('spawn-error-forwarder');
+const PrettyFormats = require('./lib/PrettyFormats');
 
 const setting = require(path.resolve('.picklogrc.js')); // eslint-disable-line import/no-dynamic-require
 
 const END = '==END==';
 const SPLIT = '==SPLIT==';
 
-const map = {
-  H: '%H', // commit hash
-  h: '%h', // abbreviated commit hash
-  T: '%T', // tree hash
-  t: '%t', // abbreviated tree hash
-  P: '%P', // parent hashes
-  p: '%p', // abbreviated parent hashes
-  an: '%an', // author name
-  ae: '%ae', // author email
-  ad: '%ad', // author date (format respects --date= option)
-  ar: '%ar', // author date, relative
-  at: '%at', // author date, UNIX timestamp
-  ai: '%ai', // author date, ISO 8601-like format
-  cn: '%cn', // committer name
-  ce: '%ce', // committer email
-  cd: '%cd', // committer date (format respects --date= option)
-  cr: '%cr', // committer date, relative
-  ct: '%ct', // committer date, UNIX timestamp
-  ci: '%ci', // committer date, ISO 8601-like format
-  d: '%d', // ref names, like the --decorate option of git-log(1)
-  e: '%e', // encoding
-  s: '%s', // subject
-  f: '%f', // sanitized subject line, suitable for a filename
-  b: '%b', // body
-  B: '%B', // raw body (unwrapped subject and body)
-  N: '%N', // commit notes
-};
-const prettyFormat = `--pretty=${Object.values(map).join(SPLIT)}${END}`;
+const prettyFormatArg = `--pretty=${Object.values(PrettyFormats).join(SPLIT)}${END}`;
 
 function getTagInfo(str) {
   return str.match(/tag: ([^,)]*)/);
@@ -100,7 +74,7 @@ function picklog(_args) {
 
   return new Promise((resolve) => {
     fwd(
-      spawn('git', ['log', ...args, prettyFormat]),
+      spawn('git', ['log', ...args, prettyFormatArg]),
       (code, stderr) => new Error(`git log failed:\n\n${stderr}`),
     )
       .stdout
@@ -111,7 +85,7 @@ function picklog(_args) {
         commitsStr += data;
       })
       .on('end', () => {
-        const keys = Object.keys(map);
+        const keys = Object.keys(PrettyFormats);
         commitsStr = commitsStr.trim();
         if (!commitsStr.length) return;
 
