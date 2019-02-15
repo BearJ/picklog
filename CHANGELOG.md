@@ -1,3 +1,10 @@
+### [v1.0.0](https://github.com/BearJ/picklog/compare/v0.3.2...v1.0.0) (2019-02-15)
+
+#### Features
+* Support string as argument([7131da0](https://github.com/BearJ/picklog/commit/7131da0))
+
+
+
 ### [v0.3.2](https://github.com/BearJ/picklog/compare/v0.3.1...v0.3.2) (2019-02-13)
 
 #### Bugfixes
