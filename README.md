@@ -1,6 +1,9 @@
-## Picklog
-Pickup the logs that you filter, so you can generation changelog from it. You can get `JSON` or `markdown` you want.
+Picklog
+====
+[![Build Status](https://travis-ci.org/BearJ/picklog.svg?branch=master)](https://travis-ci.org/BearJ/picklog)
+[![npm version](https://img.shields.io/npm/v/picklog.svg)](https://www.npmjs.org/package/picklog)
 
+Pickup the logs that you filter, so you can generation changelog from it. You can get `JSON` or `markdown` you want.
 
 ### Installation and Usage
 - Installation
