@@ -90,8 +90,13 @@ function parse(commits) {
   return parseCommits;
 }
 
-function picklog(args) {
+function picklog(_args) {
+  let args = _args;
   let commitsStr = '';
+
+  if (typeof args === 'string') {
+    args = args.split(' ');
+  }
 
   return new Promise((resolve) => {
     fwd(
