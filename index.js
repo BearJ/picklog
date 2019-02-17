@@ -3,7 +3,7 @@ const getCommits = require('./lib/getCommits');
 
 const setting = require(path.resolve('.picklogrc.js')); // eslint-disable-line import/no-dynamic-require
 
-function picklog(_args) {
+function picklog(_args = []) {
   let args = _args;
 
   if (typeof args === 'string') {
