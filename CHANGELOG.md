@@ -1,3 +1,12 @@
+### [v1.0.1](https://github.com/BearJ/picklog/compare/v1.0.0...v1.0.1) (2019-02-17)
+
+#### Bugfixes
+* 兼容没有`.picklogrc`的情况([843224b](https://github.com/BearJ/picklog/commit/843224b))
+* 兼容不传参数的情况([deba5dc](https://github.com/BearJ/picklog/commit/deba5dc))
+* result按filter的顺序来排列([3a940b6](https://github.com/BearJ/picklog/commit/3a940b6))
+
+
+
 ### [v1.0.0](https://github.com/BearJ/picklog/compare/v0.3.2...v1.0.0) (2019-02-15)
 
 #### Features
