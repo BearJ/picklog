@@ -1,3 +1,13 @@
+### [v1.1.0](https://github.com/BearJ/picklog/compare/v1.0.1...v1.1.0) (2019-02-18)
+
+#### Features
+* 增加`--last`参数，用于获取距上一个tag的logs([8a43654](https://github.com/BearJ/picklog/commit/8a43654))
+
+#### Bugfixes
+* 在node6下报错([ae935c3](https://github.com/BearJ/picklog/commit/ae935c3))
+
+
+
 ### [v1.0.1](https://github.com/BearJ/picklog/compare/v1.0.0...v1.0.1) (2019-02-17)
 
 #### Bugfixes
