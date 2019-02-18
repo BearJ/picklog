@@ -1,3 +1,10 @@
+### [v1.1.1](https://github.com/BearJ/picklog/compare/v1.1.0...v1.1.1) (2019-02-18)
+
+#### Bugfixes
+* `--last`参数最近一次提交没有tag时失效的问题([fe90439](https://github.com/BearJ/picklog/commit/fe90439))
+
+
+
 ### [v1.1.0](https://github.com/BearJ/picklog/compare/v1.0.1...v1.1.0) (2019-02-18)
 
 #### Features
