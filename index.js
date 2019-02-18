@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const git = require('simple-git')();
 const getCommits = require('./lib/getCommits');
 
 const defaultSetting = {
@@ -36,8 +37,23 @@ function picklog(_args = []) {
   }
 
   return new Promise((resolve) => {
-    getCommits(args, setting)
-      .then(commits => resolve(setting.parse(commits)));
+    const isLast = args.indexOf('--last');
+
+    if (isLast > -1) {
+      args.splice(isLast, 1);
+
+      git.tags((err, tags) => {
+        if (tags.latest) {
+          args.unshift(`...${tags.latest}`);
+        }
+
+        getCommits(args, setting)
+          .then(commits => resolve(setting.parse(commits)));
+      });
+    } else {
+      getCommits(args, setting)
+        .then(commits => resolve(setting.parse(commits)));
+    }
   });
 }
 

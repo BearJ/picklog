@@ -18,9 +18,14 @@ $ npm install --save-dev picklog
 $ npx picklog
 ```
 
-- If You want to save to a file, like this:
+- If You want to save to a file:
 ```
 $ npx picklog > picklog.json
+```
+
+- If You want to pick the log from last tag:
+```
+$ npx picklog --last
 ```
 
 ### .picklogrc.js
