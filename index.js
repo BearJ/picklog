@@ -40,5 +40,5 @@ function picklog(_args = []) {
       .then(commits => resolve(setting.parse(commits)));
   });
 }
-picklog();
+
 module.exports = picklog;
