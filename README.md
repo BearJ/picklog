@@ -18,7 +18,7 @@ $ npm install --save-dev picklog
 $ npx picklog
 ```
 
-- if You want to write it to a file, like this:
+- If You want to save to a file, like this:
 ```
 $ npx picklog > picklog.json
 ```
@@ -48,48 +48,10 @@ module.exports = {
 
 `parse` is the function that you can format your output with the logs you filter. 
 
-### The structure of the `picklog`
-```
-[
-  {
-    "tag": "v0.0.3",
-    "timestamp": "1549987397",
-    "commits": [
-      {
-        "h": "ca5ce8a",
-        "s": "fix: 要使用调用时的路径下的.picklog"
-        // other data see https://git-scm.com/docs/pretty-formats
-      }
-    ],
-    "results": [
-      {
-        "filter": {
-          "name": "Bugfixes",
-          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
-        },
-        "commits": [
-          {
-            "h": "ca5ce8a",
-            "s": "fix: 要使用调用时的路径下的.picklog"
-            // other data see https://git-scm.com/docs/pretty-formats
-          }
-        ]
-      }
-    ],
-    "previousTag": "v0.0.2"
-  }
-]
-```
-
-
 ### I want Markdown
 If you want markdown output, you can use `.picklogrc.js` like this:
 
 ```javascript
-const origin = 'https://github.com/your-project';
-const comparePath = `${origin}/compare/`;
-const commitPath = `${origin}/commit/`;
-
 module.exports = {
   filters: [
     {
@@ -108,11 +70,11 @@ module.exports = {
       let date = new Date(log.timestamp * 1000);
       date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('' + date.getDate()).substr(-2)}`;
       
-      output += `### [${log.tag}](${comparePath}${log.previousTag || ''}...${log.tag}) (${date})\n\n`;
+      output += `### ${log.tag} (${date})\n\n`;
 
       log.results.forEach((result) => {
         result.commits.forEach((commit) => {
-          output += `* ${commit.s}([${commit.h}](${commitPath}${commit.h}))\n`;
+          output += `* ${commit.s}(${commit.h})\n`;
         });
 
         output += '\n';
