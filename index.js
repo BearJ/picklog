@@ -43,8 +43,8 @@ function picklog(_args = []) {
       args.splice(isLast, 1);
 
       git.tags((err, tags) => {
-        if (tags.latest) {
-          args.unshift(`...${tags.latest}`);
+        if (tags.all.length) {
+          args.unshift(`...${tags.all[tags.all.length - 1]}`);
         }
 
         getCommits(args, setting)
