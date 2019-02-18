@@ -23,6 +23,15 @@ $ npx picklog
 $ npx picklog > picklog.json
 ```
 
+- Also you can run picklog is node:
+```javascript
+var picklog = require('picklog');
+
+picklog().then(function(prasedText){
+  console.log(prasedText);
+});
+```
+
 ### .picklogrc.js
 
 Here is a demo. Also you can output markdown, see the file `.picklogrc.js`
