@@ -20,7 +20,11 @@
   },
   "author": "BearJ",
   "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "dependencies": {
+    "object.values": "^1.1.0",
     "spawn-error-forwarder": "^1.0.0",
     "through2": "^3.0.0"
   },
