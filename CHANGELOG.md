@@ -1,3 +1,13 @@
+### [v1.1.2](https://github.com/BearJ/picklog/compare/v1.1.1...v1.1.2) (2019-02-18)
+
+#### Bugfixes
+* remove `now` 这个tag([6f0921b](https://github.com/BearJ/picklog/commit/6f0921b))
+
+#### Reverts
+* 移除`--last`参数([afddeb7](https://github.com/BearJ/picklog/commit/afddeb7))
+
+
+
 ### [v1.1.1](https://github.com/BearJ/picklog/compare/v1.1.0...v1.1.1) (2019-02-18)
 
 #### Bugfixes
