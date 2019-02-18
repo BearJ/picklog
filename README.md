@@ -23,11 +23,6 @@ $ npx picklog
 $ npx picklog > picklog.json
 ```
 
-- If You want to pick the log from last tag:
-```
-$ npx picklog --last
-```
-
 ### .picklogrc.js
 
 Here is a demo. Also you can output markdown, see the file `.picklogrc.js`
