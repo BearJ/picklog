@@ -1,3 +1,10 @@
+### [v1.2.0](https://github.com/BearJ/picklog/compare/v1.1.2...v1.2.0) (2019-02-19)
+
+#### Features
+* 增加`--latest`参数，可以获得距离上一个tag提交的logs([ec1265c](https://github.com/BearJ/picklog/commit/ec1265c))
+
+
+
 ### [v1.1.2](https://github.com/BearJ/picklog/compare/v1.1.1...v1.1.2) (2019-02-18)
 
 #### Bugfixes
