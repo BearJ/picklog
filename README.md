@@ -3,38 +3,53 @@ Picklog
 [![Build Status](https://travis-ci.org/BearJ/picklog.svg?branch=master)](https://travis-ci.org/BearJ/picklog)
 [![npm version](https://img.shields.io/npm/v/picklog.svg)](https://www.npmjs.org/package/picklog)
 
-Pickup the logs that you filter, so you can generation changelog from it. You can get `JSON` or `markdown` you want.
+根据你设置的filter，选取你需要的log，然后可以生成changelog。可以生成`JSON`或`markdown`。
 
-### Installation and Usage
-- Installation
+( Pickup the logs that you filter, so you can generation changelog from it. You can get `JSON` or `markdown` you want. )
+
+### 安装和使用 ( Installation and Usage )
+- 安装 Installation
 ```
 $ npm install --save-dev picklog
 ```
 
-- Add `.picklogrc.js` to your project. More detail see below.
+- 在你项目添加`.picklogrc.js`文件，更多详情请看下面的介绍。( Add `.picklogrc.js` to your project. More detail see below. )
 
-- You can run it in Terminal like this:
+- 你可以在终端运行以下命令：( You can run it in Terminal like this: )
 ```
 $ npx picklog
 ```
 
-- If You want to save to a file:
+- 你可以把它输出到一个文件里：( Save to a file: )
 ```
 $ npx picklog > picklog.json
 ```
 
-- Also you can run picklog is node:
+- 你也可以在node下运行：( Also can run picklog is node: )
 ```javascript
 var picklog = require('picklog');
 
-picklog().then(function(prasedText){
+picklog(/* git log args */).then(function(prasedText){
+  console.log(prasedText);
+});
+```
+
+- 使用参数`--latest`拿到距离上一个tag提交的logs：( Get the latest logs with `--latest` after last tag: )
+```
+$ npx picklog --latest
+```
+or
+```javascript
+var picklog = require('picklog');
+
+picklog('--latest').then(function(prasedText){
   console.log(prasedText);
 });
 ```
 
 ### .picklogrc.js
 
-Here is a demo. Also you can output markdown, see the file `.picklogrc.js`
+这是一个输出为json的demo。( Here is demo that the output is json. )
 
 ```javascript
 module.exports = {
@@ -53,12 +68,12 @@ module.exports = {
   },
 };
 ```
-`filters` means the log you want to pick, you can alse get this in output.
+`filters` 规定了选取log的正则，你也可以在output里获得它。( `filters` use regexp filter logs, you can alse get this in output. )
 
-`parse` is the function that you can format your output with the logs you filter. 
+`parse` 是个你可以对你过滤的logs进行解析的函数。( `parse` is the function that you can parse your output with the logs you filter. ) 
 
-### I want Markdown
-If you want markdown output, you can use `.picklogrc.js` like this:
+### 我想要Markdown ( I want Markdown )
+如果你需要输出为markdown，你可以用以下的 `.picklogrc.js` 。( If you want markdown output, you can use `.picklogrc.js` like this: )
 
 ```javascript
 module.exports = {
