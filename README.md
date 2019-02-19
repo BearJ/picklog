@@ -23,7 +23,7 @@ $ npx picklog
 $ npx picklog > picklog.json
 ```
 
-- Also you can run picklog is node:
+- Also you can run picklog in node:
 ```javascript
 var picklog = require('picklog');
 
@@ -77,7 +77,7 @@ module.exports = {
 
     picklog.forEach((log) => {
       let date = new Date(log.timestamp * 1000);
-      date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('' + date.getDate()).substr(-2)}`;
+      date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('0' + date.getDate()).substr(-2)}`;
       
       output += `### ${log.tag} (${date})\n\n`;
 
