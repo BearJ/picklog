@@ -22,10 +22,16 @@ const defaultSetting = {
 
 function picklog(_args = []) {
   let args = _args;
+  let isLatest = false;
   let setting;
 
   if (typeof args === 'string') {
     args = args.split(' ');
+  }
+
+  if (args.indexOf('--latest') > -1) {
+    isLatest = true;
+    args.splice(args.indexOf('--latest'), 1);
   }
 
   try {
@@ -37,7 +43,13 @@ function picklog(_args = []) {
 
   return new Promise((resolve) => {
     getCommits(args, setting)
-      .then(commits => resolve(setting.parse(commits)));
+      .then((commits) => {
+        if (isLatest) {
+          resolve(setting.parse(commits.slice(0, 1)));
+        } else {
+          resolve(setting.parse(commits));
+        }
+      });
   });
 }
 
