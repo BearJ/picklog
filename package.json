@@ -24,10 +24,8 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "argparse": "^1.0.10",
     "object.values": "^1.1.0",
-    "spawn-error-forwarder": "^1.0.0",
-    "through2": "^3.0.0"
+    "simple-git": "^1.107.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
