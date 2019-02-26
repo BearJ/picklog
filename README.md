@@ -3,7 +3,7 @@ Picklog
 [![Build Status](https://travis-ci.org/BearJ/picklog.svg?branch=master)](https://travis-ci.org/BearJ/picklog)
 [![npm version](https://img.shields.io/npm/v/picklog.svg)](https://www.npmjs.org/package/picklog)
 
-根据你设置的filter，选取你需要的log，然后可以生成changelog。可以生成`JSON`或`markdown`。
+根据你设置的filter，提取出你需要的log，从而生成changelog。可以生成`JSON`或`markdown`。
 
 ( Pickup the logs that you filter, so you can generation changelog from it. You can get `JSON` or `markdown` you want. )
 
@@ -70,7 +70,7 @@ module.exports = {
 ```
 `filters` 规定了选取log的正则，你也可以在output里获得它。( `filters` use regexp filter logs, you can alse get this in output. )
 
-`parse` 是个你可以对你过滤的logs进行解析的函数。( `parse` is the function that you can parse your output with the logs you filter. ) 
+`parse` 是个你可以对你过滤的logs进行解析的函数。参数`picklog`是git logs数组。( `parse` is the function that you can parse your output with the logs you filter.`picklog` is git logs array. ) 
 
 ### 我想要Markdown ( I want Markdown )
 如果你需要输出为markdown，你可以用以下的 `.picklogrc.js` 。( If you want markdown output, you can use `.picklogrc.js` like this: )
