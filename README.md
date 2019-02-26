@@ -68,9 +68,12 @@ module.exports = {
   },
 };
 ```
-`filters` 规定了选取log的正则，你也可以在output里获得它。( `filters` use regexp filter logs, you can alse get this in output. )
 
-`parse` 是个你可以对你过滤的logs进行解析的函数。参数`picklog`是git logs数组。( `parse` is the function that you can parse your output with the logs you filter.`picklog` is git logs array. ) 
+| 参数 | 必填 | 说明 | 类型 |
+| ------ | ------ | ------ | ------ |
+| filters | Yes | 规定了选取log的正则，你也可以在output里获得它。( `filters` use regexp filter logs, you can alse get this in output. ) | Array |
+| parse | Yes | 你可以对你过滤的logs进行解析的函数。参数`picklog`是git logs数组。( `parse` is the function that you can parse your output with the logs you filter.`picklog` is git logs array. ) | Function |
+
 
 ### 我想要Markdown ( I want Markdown )
 如果你需要输出为markdown，你可以用以下的 `.picklogrc.js` 。( If you want markdown output, you can use `.picklogrc.js` like this: )
