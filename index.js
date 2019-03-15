@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const getCommits = require('./lib/getCommits');
+const getLatestCommits = require('./lib/getLatestCommits');
 
 const defaultSetting = {
   filters: [
@@ -45,7 +46,9 @@ function picklog(_args = []) {
     getCommits(args, setting)
       .then((commits) => {
         if (isLatest) {
-          resolve(setting.parse(commits.slice(0, 1)));
+          getLatestCommits(commits, setting).then((latestCommits) => {
+            resolve(setting.parse(latestCommits));
+          });
         } else {
           resolve(setting.parse(commits));
         }
