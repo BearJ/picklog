@@ -1,3 +1,10 @@
+### [v1.2.1](https://github.com/BearJ/picklog/compare/v1.2.0...v1.2.1) (2019-03-15)
+
+#### Bugfixes
+* 当使用`--latest`时，如果新内容有merge，那么会丢失比上一个tag还要早的commit的问题([ebe0f0c](https://github.com/BearJ/picklog/commit/ebe0f0c))
+
+
+
 ### [v1.2.0](https://github.com/BearJ/picklog/compare/v1.1.2...v1.2.0) (2019-02-19)
 
 #### Features
