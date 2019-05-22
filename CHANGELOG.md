@@ -1,3 +1,10 @@
+### [v1.2.2](https://github.com/BearJ/picklog/compare/v1.2.1...v1.2.2) (2019-05-22)
+
+#### Bugfixes
+* 新项目在没有第一个的tag的时候，出现报错([3111693](https://github.com/BearJ/picklog/commit/3111693))
+
+
+
 ### [v1.2.1](https://github.com/BearJ/picklog/compare/v1.2.0...v1.2.1) (2019-03-15)
 
 #### Bugfixes
