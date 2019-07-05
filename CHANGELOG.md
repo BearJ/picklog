@@ -1,3 +1,10 @@
+### [v1.2.3](https://github.com/BearJ/picklog/compare/v1.2.2...v1.2.3) (2019-07-5)
+
+#### Bugfixes
+* 当tag是打在merge产生的commit的时候，会导致找不到tag的问题。因为git cherry不能提取merge的commit([d0a3453](https://github.com/BearJ/picklog/commit/d0a3453))
+
+
+
 ### [v1.2.2](https://github.com/BearJ/picklog/compare/v1.2.1...v1.2.2) (2019-05-22)
 
 #### Bugfixes
