@@ -1,14 +1,13 @@
 /* eslint-disable no-undef */
 
-const fs = require('fs');
-const path = require('path');
+const { readFileSync } = require('fs');
+const { resolve } = require('path');
 
 const splitCommitByTag = require('../../src/splitCommitByTag.js');
-const commits = require('./commits');
-const setting = require('./.picklogrc');
+const commits = require('./input');
 
-const output = fs.readFileSync(path.resolve(__dirname, 'output.json'), 'utf-8');
+const output = readFileSync(resolve(__dirname, 'output.json'), 'utf-8');
 
 test('Test splitCommitByTag', () => {
-  expect(setting.parse(splitCommitByTag(commits, setting))).toBe(output);
+  expect(JSON.stringify(splitCommitByTag(commits), null, 2)).toBe(output);
 });

@@ -113,7 +113,44 @@
         "N": ""
       }
     ],
-    "previousTag": "v0.3.2"
+    "previousTag": "v0.3.2",
+    "results": [
+      {
+        "filter": {
+          "name": "Features",
+          "regExp": "/^feat(\\(.*?\\))?:\\s/i"
+        },
+        "commits": [
+          {
+            "H": "7131da09543517aa0755f3b8d8db640955ca5749",
+            "h": "7131da0",
+            "T": "759f7cc26dbd43736cfb127a76807957a07f87eb",
+            "t": "759f7cc",
+            "P": "49548d16c614d81eab9a84f7c427d9ededc1d266",
+            "p": "49548d1",
+            "an": "BearJ",
+            "ae": "bearyanjh@foxmail.com",
+            "ad": "Fri Feb 15 16:05:49 2019 +0800",
+            "ar": "3 hours ago",
+            "at": "1550217949",
+            "ai": "2019-02-15 16:05:49 +0800",
+            "cn": "BearJ",
+            "ce": "bearyanjh@foxmail.com",
+            "cd": "Fri Feb 15 16:05:49 2019 +0800",
+            "cr": "3 hours ago",
+            "ct": "1550217949",
+            "ci": "2019-02-15 16:05:49 +0800",
+            "d": "",
+            "e": "",
+            "s": "feat: Support string as argument",
+            "f": "feat-Support-string-as-argument",
+            "b": "",
+            "B": "feat: Support string as argument\n",
+            "N": ""
+          }
+        ]
+      }
+    ]
   },
   {
     "tag": "v0.3.2",
@@ -202,7 +239,44 @@
         "N": ""
       }
     ],
-    "previousTag": "v0.3.1"
+    "previousTag": "v0.3.1",
+    "results": [
+      {
+        "filter": {
+          "name": "Bugfixes",
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
+        },
+        "commits": [
+          {
+            "H": "3950ac5d466c2ca0b62f433831af4e47e9e9e8fd",
+            "h": "3950ac5",
+            "T": "59c244fbd679ef0eb81945c1e5c6621799f7d4a9",
+            "t": "59c244f",
+            "P": "8d9a908c4938b966676ebaf771f514ae300f9f5e",
+            "p": "8d9a908",
+            "an": "BearJ",
+            "ae": "bearyanjh@foxmail.com",
+            "ad": "Wed Feb 13 21:43:49 2019 +0800",
+            "ar": "2 days ago",
+            "at": "1550065429",
+            "ai": "2019-02-13 21:43:49 +0800",
+            "cn": "BearJ",
+            "ce": "bearyanjh@foxmail.com",
+            "cd": "Wed Feb 13 21:43:49 2019 +0800",
+            "cr": "2 days ago",
+            "ct": "1550065429",
+            "ci": "2019-02-13 21:43:49 +0800",
+            "d": "",
+            "e": "",
+            "s": "fix: 修复bin的入口",
+            "f": "fix-bin",
+            "b": "",
+            "B": "fix: 修复bin的入口\n",
+            "N": ""
+          }
+        ]
+      }
+    ]
   },
   {
     "tag": "v0.3.1",
@@ -291,7 +365,8 @@
         "N": ""
       }
     ],
-    "previousTag": "v0.3.0"
+    "previousTag": "v0.3.0",
+    "results": []
   },
   {
     "tag": "v0.3.0",
@@ -461,7 +536,8 @@
         "N": ""
       }
     ],
-    "previousTag": "v0.1.0"
+    "previousTag": "v0.1.0",
+    "results": []
   },
   {
     "tag": "v0.1.0",
@@ -631,7 +707,8 @@
         "N": ""
       }
     ],
-    "previousTag": "v0.0.3"
+    "previousTag": "v0.0.3",
+    "results": []
   },
   {
     "tag": "v0.0.3",
@@ -693,7 +770,44 @@
         "N": ""
       }
     ],
-    "previousTag": "v0.0.2"
+    "previousTag": "v0.0.2",
+    "results": [
+      {
+        "filter": {
+          "name": "Bugfixes",
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
+        },
+        "commits": [
+          {
+            "H": "ca5ce8a149b94d8765a77f045f369058d345f3e1",
+            "h": "ca5ce8a",
+            "T": "8177277d8e61d3c0feb98e5ffdb69a6f98b702ef",
+            "t": "8177277",
+            "P": "e5e74acdeb4c05dba1b26274d9ca9fd9417aa0a7",
+            "p": "e5e74ac",
+            "an": "BearJ",
+            "ae": "bearyanjh@foxmail.com",
+            "ad": "Tue Feb 12 23:55:53 2019 +0800",
+            "ar": "3 days ago",
+            "at": "1549986953",
+            "ai": "2019-02-12 23:55:53 +0800",
+            "cn": "BearJ",
+            "ce": "bearyanjh@foxmail.com",
+            "cd": "Tue Feb 12 23:55:53 2019 +0800",
+            "cr": "3 days ago",
+            "ct": "1549986953",
+            "ci": "2019-02-12 23:55:53 +0800",
+            "d": "",
+            "e": "",
+            "s": "fix: 要使用调用时的路径下的.picklog",
+            "f": "fix-.picklog",
+            "b": "",
+            "B": "fix: 要使用调用时的路径下的.picklog\n",
+            "N": ""
+          }
+        ]
+      }
+    ]
   },
   {
     "tag": "v0.0.2",
@@ -782,6 +896,7 @@
         "N": ""
       }
     ],
-    "previousTag": ""
+    "previousTag": "",
+    "results": []
   }
 ]

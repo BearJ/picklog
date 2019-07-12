@@ -1,0 +1,120 @@
+[
+  {
+    "tag": "v1.2.3",
+    "timestamp": "1562330184",
+    "commitHash": "34b498759975de0947dd20261947c3b80274ef31",
+    "commits": [
+      {
+        "H": "34b498759975de0947dd20261947c3b80274ef31",
+        "h": "34b4987",
+        "T": "99ccc0b91c843d7c1c2af63126fb4612b362c474",
+        "t": "99ccc0b",
+        "P": "d0a3453901a85611a4a49d789d0b836d2e8bb6b9",
+        "p": "d0a3453",
+        "an": "BearJ",
+        "ae": "bearyanjh@foxmail.com",
+        "ad": "Fri Jul 5 20:36:24 2019 +0800",
+        "at": "1562330184",
+        "ai": "2019-07-05 20:36:24 +0800",
+        "cn": "BearJ",
+        "ce": "bearyanjh@foxmail.com",
+        "cd": "Fri Jul 5 20:36:24 2019 +0800",
+        "ct": "1562330184",
+        "ci": "2019-07-05 20:36:24 +0800",
+        "d": " (tag: v1.2.3)",
+        "e": "",
+        "s": "1.2.3",
+        "f": "1.2.3",
+        "b": "",
+        "B": "1.2.3\n",
+        "N": ""
+      },
+      {
+        "H": "d0a3453901a85611a4a49d789d0b836d2e8bb6b9",
+        "h": "d0a3453",
+        "T": "9d637fe9308245500ac55043d29078cf1899f760",
+        "t": "9d637fe",
+        "P": "e85766d45bad6114842e22f6f539578bb7ae438e",
+        "p": "e85766d",
+        "an": "BearJ",
+        "ae": "bearyanjh@foxmail.com",
+        "ad": "Fri Jul 5 20:36:09 2019 +0800",
+        "at": "1562330169",
+        "ai": "2019-07-05 20:36:09 +0800",
+        "cn": "BearJ",
+        "ce": "bearyanjh@foxmail.com",
+        "cd": "Fri Jul 5 20:36:09 2019 +0800",
+        "ct": "1562330169",
+        "ci": "2019-07-05 20:36:09 +0800",
+        "d": "",
+        "e": "",
+        "s": "fix: 当tag是打在merge产生的commit的时候，会导致找不到tag的问题。因为git cherry不能提取merge的commit",
+        "f": "fix-tag-merge-commit-tag-git-cherry-merge-commit",
+        "b": "",
+        "B": "fix: 当tag是打在merge产生的commit的时候，会导致找不到tag的问题。因为git cherry不能提取merge的commit\n",
+        "N": ""
+      },
+      {
+        "H": "e85766d45bad6114842e22f6f539578bb7ae438e",
+        "h": "e85766d",
+        "T": "508c1e865c5eeea1bc2e1b92c625e0b33f37fb06",
+        "t": "508c1e8",
+        "P": "dc85393a24f7cf4a8aaace4c8c34302790d8a631",
+        "p": "dc85393",
+        "an": "BearJ",
+        "ae": "bearyanjh@foxmail.com",
+        "ad": "Wed May 22 21:53:45 2019 +0800",
+        "at": "1558533225",
+        "ai": "2019-05-22 21:53:45 +0800",
+        "cn": "BearJ",
+        "ce": "bearyanjh@foxmail.com",
+        "cd": "Wed May 22 21:53:45 2019 +0800",
+        "ct": "1558533225",
+        "ci": "2019-05-22 21:53:45 +0800",
+        "d": "",
+        "e": "",
+        "s": "changelog",
+        "f": "changelog",
+        "b": "",
+        "B": "changelog\n",
+        "N": ""
+      }
+    ],
+    "previousTag": "v1.2.2",
+    "results": [
+      {
+        "filter": {
+          "name": "Bugfixes",
+          "regExp": {}
+        },
+        "commits": [
+          {
+            "H": "d0a3453901a85611a4a49d789d0b836d2e8bb6b9",
+            "h": "d0a3453",
+            "T": "9d637fe9308245500ac55043d29078cf1899f760",
+            "t": "9d637fe",
+            "P": "e85766d45bad6114842e22f6f539578bb7ae438e",
+            "p": "e85766d",
+            "an": "BearJ",
+            "ae": "bearyanjh@foxmail.com",
+            "ad": "Fri Jul 5 20:36:09 2019 +0800",
+            "at": "1562330169",
+            "ai": "2019-07-05 20:36:09 +0800",
+            "cn": "BearJ",
+            "ce": "bearyanjh@foxmail.com",
+            "cd": "Fri Jul 5 20:36:09 2019 +0800",
+            "ct": "1562330169",
+            "ci": "2019-07-05 20:36:09 +0800",
+            "d": "",
+            "e": "",
+            "s": "fix: 当tag是打在merge产生的commit的时候，会导致找不到tag的问题。因为git cherry不能提取merge的commit",
+            "f": "fix-tag-merge-commit-tag-git-cherry-merge-commit",
+            "b": "",
+            "B": "fix: 当tag是打在merge产生的commit的时候，会导致找不到tag的问题。因为git cherry不能提取merge的commit\n",
+            "N": ""
+          }
+        ]
+      }
+    ]
+  }
+]

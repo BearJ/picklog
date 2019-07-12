@@ -1,16 +1,55 @@
 /* eslint-disable no-undef */
 
-const fs = require('fs');
-const path = require('path');
+const { readFileSync } = require('fs');
+const { resolve } = require('path');
 
 const getCommits = require('../../src/getCommits.js');
-const setting = require('./.picklogrc');
+const setting = require('../.picklogrc');
 
-const output = fs.readFileSync(path.resolve(__dirname, 'output.json'), 'utf-8');
+const output = readFileSync(resolve(__dirname, 'output.json'), 'utf-8');
+const outputWithLatest = readFileSync(resolve(__dirname, 'outputWithLatest.json'), 'utf-8');
 
-test('Test getCommits', () => {
-  getCommits(['v0.3.2'], setting)
+test('Test getCommits.js', () => {
+  getCommits({
+    gitLogArgs: 'v1.2.3',
+  }, setting)
     .then((commits) => {
-      expect(setting.parse(commits)).toBe(output);
+      commits.forEach((log) => {
+        log.commits.forEach((commit) => {
+          delete commit.ar;
+          delete commit.cr;
+        });
+        log.results.forEach((result) => {
+          result.commits.forEach((commit) => {
+            delete commit.ar;
+            delete commit.cr;
+          });
+        });
+      });
+
+      expect(JSON.stringify(commits, null, 2)).toBe(output);
+    });
+});
+
+test('Test getCommits.js with arg "latest"', () => {
+  getCommits({
+    latest: true,
+    gitLogArgs: 'v1.2.3',
+  }, setting)
+    .then((commits) => {
+      commits.forEach((log) => {
+        log.commits.forEach((commit) => {
+          delete commit.ar;
+          delete commit.cr;
+        });
+        log.results.forEach((result) => {
+          result.commits.forEach((commit) => {
+            delete commit.ar;
+            delete commit.cr;
+          });
+        });
+      });
+
+      expect(JSON.stringify(commits, null, 2)).toBe(outputWithLatest);
     });
 });
