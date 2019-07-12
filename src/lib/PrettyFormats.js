@@ -2,6 +2,7 @@
  * Return pretty-formats
  * More detail see: https://git-scm.com/docs/pretty-formats
  */
+const values = require('object.values');
 
 const END = '==END==';
 const SPLIT = '==SPLIT==';
@@ -33,6 +34,10 @@ const format = {
   B: '%B', // raw body (unwrapped subject and body)
   N: '%N', // commit notes
 };
+
+if (!Object.values) {
+  values.shim();
+}
 
 module.exports = {
   SPLIT,

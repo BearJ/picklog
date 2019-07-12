@@ -29,7 +29,7 @@ module.exports = {
 
     picklog.forEach((log) => {
       let date = new Date(log.timestamp * 1000);
-      date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('' + date.getDate()).substr(-2)}`;
+      date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('0' + date.getDate()).substr(-2)}`;
 
       output += `### [${log.tag}](${comparePath}${log.previousTag || ''}...${log.tag}) (${date})\n\n`;
 

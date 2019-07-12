@@ -1,39 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const getCommits = require('./lib/getCommits');
-const getLatestCommits = require('./lib/getLatestCommits');
+const getCommits = require('./src/getCommits');
+const defaultSetting = require('./src/lib/defaultSetting');
 
-const defaultSetting = {
-  filters: [
-    {
-      name: 'Features',
-      regExp: /^feat(\(.*?\))?:\s/i,
-    },
-    {
-      name: 'Bugfixes',
-      regExp: /^fix(\(.*?\))?:\s/i,
-    },
-  ],
-  parse(logs) {
-    /* eslint-disable-next-line no-extend-native */
-    RegExp.prototype.toJSON = RegExp.prototype.toString; // JSON.stringify会调用正则表达式的toJSON
-    return JSON.stringify(logs, null, 2);
-  },
-};
-
-function picklog(_args = []) {
-  let args = _args;
-  let isLatest = false;
+function picklog(_args) {
+  const args = Object.assign({
+    gitLogArgs: '', // 透传给命令 git log 的参数
+    latest: false, // 是否只取上一个tag后的commit
+  }, _args);
   let setting;
-
-  if (typeof args === 'string') {
-    args = args.split(' ');
-  }
-
-  if (args.indexOf('--latest') > -1) {
-    isLatest = true;
-    args.splice(args.indexOf('--latest'), 1);
-  }
 
   try {
     fs.accessSync(path.resolve('.picklogrc.js'));
@@ -43,17 +18,13 @@ function picklog(_args = []) {
   }
 
   return new Promise((resolve) => {
-    getCommits(args, setting)
-      .then((commits) => {
-        if (isLatest) {
-          getLatestCommits(commits, setting).then((latestCommits) => {
-            resolve(setting.parse(latestCommits));
-          });
-        } else {
-          resolve(setting.parse(commits));
-        }
-      });
+    getCommits(args, setting).then((commits) => {
+      resolve(setting.parse(commits));
+    });
   });
 }
 
+// picklog().then((commitStr) => {
+//   fs.writeFileSync('bear.md', commitStr);
+// });
 module.exports = picklog;

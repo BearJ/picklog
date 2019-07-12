@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const getCommits = require('../../lib/getCommits.js');
+const getCommits = require('../../src/getCommits.js');
 const setting = require('./.picklogrc');
 
 const output = fs.readFileSync(path.resolve(__dirname, 'output.json'), 'utf-8');

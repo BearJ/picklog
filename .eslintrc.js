@@ -11,5 +11,6 @@ module.exports = {
     'no-param-reassign': ['error', { 'props': false }], // 允许修改入参的属性
     'no-continue': 'off', // 在我的代码里，continue; 就类似于 return; 的作用
     'no-labels': 'off', // 在我的代码里，就类似于 return; 的作用
+    'no-trailing-spaces': 'off',
   }
 };
