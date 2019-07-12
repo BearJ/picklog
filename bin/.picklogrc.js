@@ -1,4 +1,4 @@
-const origin = 'https://BearJ@github.com/BearJ/picklog';
+const origin = '<%= GitURL %>';
 const comparePath = `${origin}/compare/`;
 const commitPath = `${origin}/commit/`;
 
