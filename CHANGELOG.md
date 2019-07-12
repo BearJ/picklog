@@ -1,3 +1,11 @@
+### [v2.0.0](https://BearJ@github.com/BearJ/picklog/compare/v1.2.3...v2.0.0) (2019-07-12)
+
+#### Features
+* 增加`picklog init`来协助初始化 .picklogrc 文件([af06c37](https://BearJ@github.com/BearJ/picklog/commit/af06c37))
+* 使用git log来获取每个tag之间的commit，解决如果有merge的时候，commit会拉不全的问题。([080824b](https://BearJ@github.com/BearJ/picklog/commit/080824b))
+
+
+
 ### [v1.2.3](https://github.com/BearJ/picklog/compare/v1.2.2...v1.2.3) (2019-07-5)
 
 #### Bugfixes
