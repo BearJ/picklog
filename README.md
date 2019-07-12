@@ -7,45 +7,61 @@ Picklog
 
 ( Pickup the logs that you filter, so you can generation changelog from it. You can get `JSON` or `markdown` you want. )
 
-### 安装和使用 ( Installation and Usage )
-- 安装 Installation
+### 快速上手 ( Usage )
 ```
-$ npm install --save-dev picklog
+$ npm install -g picklog
+$ picklog init
+$ picklog -o CHANGELOG.md
 ```
+运行完 `picklog init` 后，会在你的项目下生成`.picklogrc.js`文件。你可以通过修改`.picklogrc.js`文件里的规则来控制changelog的生成。
 
-- 在你项目添加`.picklogrc.js`文件，更多详情请看下面的介绍。( Add `.picklogrc.js` to your project. More detail see below. )
+( After running `picklog init`, it generator a file `.picklogrc.js` in your project. You can modify `.picklogrc.js` to control the rules to generator changelog. Scroll up to see more detail. )
 
-- 你可以在终端运行以下命令：( You can run it in Terminal like this: )
-```
-$ npx picklog
-```
+### CLI
+- **`init`**
 
-- 你可以把它输出到一个文件里：( Save to a file: )
-```
-$ npx picklog > picklog.json
-```
+  生成配置文件`.picklogrc.js` ( Generator a setting file `.picklogrc.js` )
+  
+  e.g: `picklog init`
 
-- 你也可以在node下运行：( Also can run picklog in node: )
+- **`-w` or `--write`**
+
+  把输出添加到指定文件 ( Append stdout to a file )
+  
+  e.g: `picklog -w CHANGELOG.md`
+  
+- **`-o` or `--overwrite`**
+  
+  把输出覆盖到指定文件 ( Overwrite stdout to a file )
+  
+  e.g: `picklog -o CHANGELOG.md`
+  
+- **`-l` or `--latest`**
+  
+  只获取距离上一次tag间的修改 ( Only pick latest changes after the last tag )
+  
+  e.g: `picklog -l -w CHANGELOG.md`
+  
+
+- **`-g` or `--gitLogArgs`**
+  
+  透传给`git log`的参数，以英文逗号分隔 ( Pass the arg to "git log". Splited by **comma** )
+  
+  e.g: `picklog -g v2.0.0 -w CHANGELOG.md`
+
+
+### API
 ```javascript
-var picklog = require('picklog');
+const picklog = require('picklog');
 
-picklog(/* git log args */).then(function(prasedText){
-  console.log(prasedText);
+picklog({
+  latest: true, // The same as CLI '--latest'
+  gitLogArgs: 'v2.0.0', // The same as CLI '--gitLogArgs'
+}).then(function(markdownText){
+  console.log(markdownText);
 });
 ```
 
-- 使用参数`--latest`拿到距离上一个tag提交的logs：( Get the latest logs with `--latest` after last tag: )
-```
-$ npx picklog --latest
-```
-or
-```javascript
-var picklog = require('picklog');
-
-picklog('--latest').then(function(prasedText){
-  console.log(prasedText);
-});
-```
 
 ### .picklogrc.js
 
