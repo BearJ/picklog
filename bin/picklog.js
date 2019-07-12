@@ -10,7 +10,7 @@ function initPicklog() {
   try {
     fs.accessSync(resolve('.picklogrc.js'));
     console.log('File .picklogrc is in your project, so it\'s no need to init.');
-  } catch (err) {
+  } catch (error) {
     git.raw(['config', '--get', 'remote.origin.url'], (err, result) => {
       if (err) throw err;
 
@@ -46,18 +46,11 @@ const { argv } = yargs
 
 if (argv._.indexOf('init') > -1) {
   initPicklog();
+} else if (argv.overwrite && typeof argv.overwrite !== 'string') {
+  console.warn('Please type a file name. eg: picklog -o changelog.md');
+} else if (argv.write && typeof argv.write !== 'string') {
+  console.warn('Please type a file name. eg: picklog -w changelog.md');
 } else {
-  if (argv.overwrite && typeof argv.overwrite !== 'string') {
-    console.warn('Please type a file name. eg: picklog -o changelog.md');
-    return;
-  }
-
-  if (argv.write && typeof argv.write !== 'string') {
-    console.warn('Please type a file name. eg: picklog -w changelog.md');
-    return;
-  }
-
-
   picklog(argv)
     .then((commits) => {
       if (argv.overwrite) {
