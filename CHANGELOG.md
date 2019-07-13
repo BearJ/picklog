@@ -1,3 +1,10 @@
+### [v2.0.1](https://BearJ@github.com/BearJ/picklog/compare/v2.0.0...v2.0.1) (2019-07-13)
+
+#### Features
+* 更新init生成的picklogrc，对新手更加友好([611e3fb](https://BearJ@github.com/BearJ/picklog/commit/611e3fb))
+
+
+
 ### [v2.0.0](https://BearJ@github.com/BearJ/picklog/compare/v1.2.3...v2.0.0) (2019-07-12)
 
 #### Features
