@@ -88,7 +88,7 @@ module.exports = {
 | 参数 | 必填 | 说明 | 类型 |
 | ------ | ------ | ------ | ------ |
 | filters | Yes | 规定了选取log的正则，你也可以在output里获得它。( `filters` use regexp filter logs, you can alse get this in output. ) | Array |
-| parse | Yes | 你可以对你过滤的logs进行解析的函数。参数`picklog`是git logs数组。( `parse` is the function that you can parse your output with the logs you filter.`picklog` is git logs array. ) | Function |
+| parse | Yes | 你可以对你过滤的logs进行解析的函数。参数`commits`的结构可看[这里](./test/getCommits/output.json)。( `parse` is the function that you can parse your output with the logs you filter. [Here](./test/getCommits/output.json) is the`commits` example. ) | Function |
 
 
 ### 我想要Markdown ( I want Markdown )

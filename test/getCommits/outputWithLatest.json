@@ -85,7 +85,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {

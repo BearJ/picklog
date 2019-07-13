@@ -85,7 +85,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -228,7 +228,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -396,7 +396,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -664,7 +664,7 @@
       {
         "filter": {
           "name": "Features",
-          "regExp": {}
+          "regExp": "/^feat(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -832,7 +832,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -865,7 +865,7 @@
       {
         "filter": {
           "name": "Reverts",
-          "regExp": {}
+          "regExp": "/^revert(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -983,7 +983,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -1176,7 +1176,7 @@
       {
         "filter": {
           "name": "Features",
-          "regExp": {}
+          "regExp": "/^feat(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -1209,7 +1209,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -1452,7 +1452,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -1695,7 +1695,7 @@
       {
         "filter": {
           "name": "Features",
-          "regExp": {}
+          "regExp": "/^feat(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -1813,7 +1813,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {
@@ -2308,7 +2308,7 @@
       {
         "filter": {
           "name": "Bugfixes",
-          "regExp": {}
+          "regExp": "/^fix(\\(.*?\\))?:\\s/i"
         },
         "commits": [
           {

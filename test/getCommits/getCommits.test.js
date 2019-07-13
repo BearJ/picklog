@@ -27,6 +27,8 @@ test('Test getCommits.js', () => {
         });
       });
 
+      /* eslint-disable-next-line no-extend-native */
+      RegExp.prototype.toJSON = RegExp.prototype.toString; // JSON.stringify会调用正则表达式的toJSON
       expect(JSON.stringify(commits, null, 2)).toBe(output);
     });
 });
@@ -50,6 +52,8 @@ test('Test getCommits.js with arg "latest"', () => {
         });
       });
 
+      /* eslint-disable-next-line no-extend-native */
+      RegExp.prototype.toJSON = RegExp.prototype.toString; // JSON.stringify会调用正则表达式的toJSON
       expect(JSON.stringify(commits, null, 2)).toBe(outputWithLatest);
     });
 });
