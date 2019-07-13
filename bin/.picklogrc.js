@@ -6,30 +6,22 @@ module.exports = {
   filters: [
     {
       name: 'Features',
-      regExp: /^feat(\(.*?\))?:\s/i,
+      regExp: /^(?:feat|add)/i,
     },
     {
       name: 'Bugfixes',
-      regExp: /^fix(\(.*?\))?:\s/i,
-    },
-    {
-      name: 'Performance Improvements',
-      regExp: /^perf(\(.*?\))?:\s/i,
-    },
-    {
-      name: 'Reverts',
-      regExp: /^revert(\(.*?\))?:\s/i,
-    },
+      regExp: /^fix/i,
+    }
   ],
-  parse(picklog) {
+  parse(commits){
     // RegExp.prototype.toJSON = RegExp.prototype.toString; // JSON.stringify会调用正则表达式的toJSON
-    // return JSON.stringify(picklog, null, 2);
+    // return JSON.stringify(commits, null, 2); // output commits
 
     let output = '';
 
-    picklog.forEach((log) => {
+    commits.forEach((log) => {
       let date = new Date(log.timestamp * 1000);
-      date = `${date.getFullYear()}-${(`0${date.getMonth() + 1}`).substr(-2)}-${(`0${date.getDate()}`).substr(-2)}`;
+      date = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).substr(-2)}-${('0' + date.getDate()).substr(-2)}`;
 
       let currentTag = log.tag || log.commits[0].h;
       let prevTag = log.previousTag || log.commits[log.commits.length - 1].h;
@@ -39,16 +31,7 @@ module.exports = {
         output += `#### ${result.filter.name}\n`;
 
         result.commits.forEach((commit) => {
-          const { regExp } = result.filter;
-          let subject = commit.s.match(regExp) || '';
-
-          if (subject[1]) {
-            const type = subject[1].match(/\((.*?)\)/)[1];
-            subject = `**${type}:** ${commit.s.replace(regExp, '')}`;
-          } else {
-            subject = commit.s.replace(regExp, '');
-          }
-          output += `* ${subject}([${commit.h}](${commitPath}${commit.h}))\n`;
+          output += `* ${commit.s}([${commit.h}](${commitPath}${commit.h}))\n`;
         });
 
         output += '\n';
@@ -58,5 +41,5 @@ module.exports = {
     });
 
     return output;
-  },
+  }
 };

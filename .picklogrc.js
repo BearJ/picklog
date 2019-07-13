@@ -21,13 +21,13 @@ module.exports = {
       regExp: /^revert(\(.*?\))?:\s/i,
     },
   ],
-  parse(picklog) {
+  parse(commits) {
     // RegExp.prototype.toJSON = RegExp.prototype.toString; // JSON.stringify会调用正则表达式的toJSON
-    // return JSON.stringify(picklog, null, 2);
+    // return JSON.stringify(commits, null, 2);
 
     let output = '';
 
-    picklog.forEach((log) => {
+    commits.forEach((log) => {
       let date = new Date(log.timestamp * 1000);
       date = `${date.getFullYear()}-${(`0${date.getMonth() + 1}`).substr(-2)}-${(`0${date.getDate()}`).substr(-2)}`;
 
