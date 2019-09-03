@@ -25,16 +25,18 @@ function picklog(_args) {
   return new Promise((resolve) => {
     getCommits(args, setting).then((commits) => {
       if (commits.length && !commits[0].tag) {
+        const pkgVersion = pkg.version;
         const [firstCommit] = commits;
-        if (pkg.version) {
-          const { previousTag } = firstCommit;
+        if (pkgVersion) {
+          let { previousTag } = firstCommit;
 
           if (previousTag) {
             let prefix = previousTag.match(/^([^\d]*)/);
             if (prefix) [, prefix] = prefix;
+            previousTag = previousTag.replace(prefix, '');
 
-            if (pkg.version !== previousTag.replace(prefix, '')) {
-              firstCommit.tag = `${prefix}${pkg.version}`;
+            if (pkgVersion !== previousTag && pkgVersion.split('.').length === previousTag.split('.').length) {
+              firstCommit.tag = `${prefix}${pkgVersion}`;
             }
           }
         }
