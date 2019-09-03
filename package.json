@@ -6,9 +6,10 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint **/*.js",
-    "changelog": "node ./bin/picklog.js -l -w CHANGELOG.md && git add -A . && git commit -m \"docs: changelog\"",
+    "changelog": "node ./bin/picklog.js -l -w CHANGELOG.md",
     "preversion": "npm run lint && npm test",
-    "postversion": "npm run changelog && npm publish .  && git push && git push --tags"
+    "version": "npm run changelog",
+    "postversion": "npm publish .  && git push && git push --tags"
   },
   "husky": {
     "hooks": {
