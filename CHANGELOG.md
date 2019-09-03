@@ -1,3 +1,7 @@
+### [v2.1.1](https://BearJ@github.com/BearJ/picklog/compare/v2.1.0...v2.1.1) (2019-09-03)
+
+
+
 ### [v2.1.0](https://BearJ@github.com/BearJ/picklog/compare/v2.0.1...v2.1.0) (2019-09-03)
 
 #### Features
