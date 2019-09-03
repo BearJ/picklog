@@ -1,3 +1,10 @@
+### [v2.1.2](https://BearJ@github.com/BearJ/picklog/compare/v2.1.1...v2.1.2) (2019-09-03)
+
+#### Bugfixes
+* 读package.json的版本号的时候，必须格式要一致才能认([a3ba942](https://BearJ@github.com/BearJ/picklog/commit/a3ba942))
+
+
+
 ### [v2.1.1](https://BearJ@github.com/BearJ/picklog/compare/v2.1.0...v2.1.1) (2019-09-03)
 
 
