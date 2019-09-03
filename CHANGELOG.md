@@ -1,3 +1,10 @@
+### [v2.1.0](https://BearJ@github.com/BearJ/picklog/compare/v2.0.1...v2.1.0) (2019-09-03)
+
+#### Features
+* 当第一个tag分组找不到tag的时候，尝试从package.json里找([b0a43c1](https://BearJ@github.com/BearJ/picklog/commit/b0a43c1))
+
+
+
 ### [v2.0.1](https://BearJ@github.com/BearJ/picklog/compare/v2.0.0...v2.0.1) (2019-07-13)
 
 #### Features
