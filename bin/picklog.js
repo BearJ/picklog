@@ -54,8 +54,10 @@ if (argv._.indexOf('init') > -1) {
   picklog(argv)
     .then((commits) => {
       if (argv.overwrite) {
+        fs.appendFileSync(resolve(argv.overwrite), '');
         fs.writeFileSync(resolve(argv.overwrite), commits, 'utf8');
       } else if (argv.write) {
+        fs.appendFileSync(resolve(argv.write), '');
         fs.writeFileSync(resolve(argv.write), commits + fs.readFileSync(resolve(argv.write), 'utf8'));
       } else {
         console.log(commits);
