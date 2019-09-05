@@ -1,3 +1,11 @@
+### [v2.1.3](https://BearJ@github.com/BearJ/picklog/compare/v2.1.2...v2.1.3) (2019-09-05)
+
+#### Bugfixes
+* 当没有Changelog.md文件的时候会报错([5de6313](https://BearJ@github.com/BearJ/picklog/commit/5de6313))
+* 如果一开始项目没有tag的时候，报错找不到tag([f5d5f80](https://BearJ@github.com/BearJ/picklog/commit/f5d5f80))
+
+
+
 ### [v2.1.2](https://BearJ@github.com/BearJ/picklog/compare/v2.1.1...v2.1.2) (2019-09-03)
 
 #### Bugfixes
