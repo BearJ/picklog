@@ -47,5 +47,9 @@ module.exports = function splitCommitByTag(commits) {
     }));
   }
 
+  if (!result.length) {
+    result.push(commitObject);
+  }
+
   return result;
 };
