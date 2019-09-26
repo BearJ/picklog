@@ -1,3 +1,10 @@
+### [v2.1.4](https://BearJ@github.com/BearJ/picklog/compare/v2.1.3...v2.1.4) (2019-09-26)
+
+#### Bugfixes
+* 当第一次提交的时候没有tag，默认使用package.json的version([0bfd770](https://BearJ@github.com/BearJ/picklog/commit/0bfd770))
+
+
+
 ### [v2.1.3](https://BearJ@github.com/BearJ/picklog/compare/v2.1.2...v2.1.3) (2019-09-05)
 
 #### Bugfixes
