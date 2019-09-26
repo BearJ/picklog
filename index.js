@@ -38,6 +38,8 @@ function picklog(_args) {
             if (pkgVersion !== previousTag && pkgVersion.split('.').length === previousTag.split('.').length) {
               firstCommit.tag = `${prefix}${pkgVersion}`;
             }
+          } else {
+            firstCommit.tag = `v${pkgVersion}`;
           }
         }
       }
