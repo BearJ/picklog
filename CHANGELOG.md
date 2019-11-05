@@ -1,3 +1,13 @@
+### [v2.2.0](https://BearJ@github.com/BearJ/picklog/compare/v2.1.4...v2.2.0) (2019-11-05)
+
+#### Features
+* 增加 `tagFilter` 来选取自己所需的 tag([1bb7b96](https://BearJ@github.com/BearJ/picklog/commit/1bb7b96))
+
+#### Bugfixes
+* 当使用`latest`获取最近 logs 时，如果有合并分支，可能导致丢了某些 log 的问题（丢失特征：log的时间点比上一个tag还要旧）([7263516](https://BearJ@github.com/BearJ/picklog/commit/7263516))
+
+
+
 ### [v2.1.4](https://BearJ@github.com/BearJ/picklog/compare/v2.1.3...v2.1.4) (2019-09-26)
 
 #### Bugfixes
