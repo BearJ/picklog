@@ -22,20 +22,18 @@ function gitLogLoop(tagCommitObjList) {
       return new Promise(async (loopResolve) => {
         const tagCommitObj = tagCommitObjList[index];
 
-        if (index === tagCommitObjList.length - 1) {
-          tagCommitObj.commits = tagCommitObj.commits.filter(isUnique);
-
+        if (index > tagCommitObjList.length - 1) {
           loopResolve();
           return;
         }
 
-        git.raw(['log', `${tagCommitObj.tag}...${tagCommitObj.previousTag}`, PrettyFormats.arg], (loopErr, loopResult) => {
+        git.raw(['log', `${tagCommitObj.tag || ''}...${tagCommitObj.previousTag || ''}`, PrettyFormats.arg], (loopErr, loopResult) => {
           if (loopErr) throw loopErr;
 
           const commits = PrettyFormats.parse(loopResult);
           let mergeCommits = tagCommitObj.commits.concat(commits);
 
-          spinner.text = `Loading logs between ${tagCommitObj.tag} and ${tagCommitObj.previousTag} , Progress: ${index + 1}/${tagCommitObjList.length - 1}`;
+          spinner.text = `Loading logs between ${tagCommitObj.tag || ''} and ${tagCommitObj.previousTag || ''} , Progress: ${index + 1}/${tagCommitObjList.length - 1}`;
 
           mergeCommits = mergeCommits
             .sort((commitA, commitB) => commitB.ct - commitA.ct)
