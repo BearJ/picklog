@@ -17,14 +17,17 @@ function getCommitObj(commit) {
   };
 }
 
-module.exports = function splitCommitByTag(commits) {
+module.exports = function splitCommitByTag(commits, setting) {
   if (!commits || commits.length < 1) return [];
 
   const result = [];
   let commitObject = getCommitObj(commits.splice(0, 1)[0]);
 
   commits.forEach((commit) => {
-    const tagName = getTagName(commit.d);
+    let tagName = getTagName(commit.d);
+    if (setting.tagFilter) {
+      tagName = setting.tagFilter.test(tagName) ? tagName : '';
+    }
 
     if (tagName) {
       // 该commit有tag

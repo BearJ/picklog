@@ -82,13 +82,15 @@ module.exports = {
   parse(commits){
     return JSON.stringify(commits, null, 2);
   },
+  tagFilter: /^v\d+\.\d+\.\d+$/, // Optional
 };
 ```
 
-| 参数 | 必填 | 说明 | 类型 |
+| 参数 (Args) | 必填 (Required) | 说明 (Introduction) | 类型 (Type) |
 | ------ | ------ | ------ | ------ |
 | filters | Yes | 规定了选取log的正则，你也可以在output里获得它。( `filters` use regexp filter logs, you can alse get this in output. ) | Array |
 | parse | Yes | 你可以对你过滤的logs进行解析的函数。参数`commits`的结构可看[这里](./test/getCommits/output.json)。( `parse` is the function that you can parse your output with the logs you filter. [Here](./test/getCommits/output.json) is the`commits` example. ) | Function |
+| tagFilter | False | 规定了选取tag的正则。( `tagFilter` use regexp filter tag. ) | RegExp |
 
 
 ### 我想要Markdown ( I want Markdown )
@@ -127,7 +129,8 @@ module.exports = {
     });
 
     return output;
-  }
+  },
+  tagFilter: /^v\d+\.\d+\.\d+$/, // Optional
 };
 ```
 
@@ -179,6 +182,7 @@ module.exports = {
     });
 
     return output;
-  }
+  },
+  tagFilter: /^v\d+\.\d+\.\d+$/, // Optional
 };
 ```

@@ -4,7 +4,7 @@
   "description": "Pickup the logs that you filter, so you can generation changelog from it.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "lint": "eslint **/*.js",
     "changelog": "node ./bin/picklog.js -l -w CHANGELOG.md",
     "preversion": "npm run lint && npm test",

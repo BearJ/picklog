@@ -23,5 +23,4 @@ module.exports = {
     RegExp.prototype.toJSON = RegExp.prototype.toString; // JSON.stringify会调用正则表达式的toJSON
     return JSON.stringify(logs, null, 2);
   },
-  tagFilter: /^v\d+\.\d+\.\d+$/,
 };

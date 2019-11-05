@@ -59,4 +59,5 @@ module.exports = {
 
     return output;
   },
+  tagFilter: /^v\d+\.\d+\.\d+$/,
 };

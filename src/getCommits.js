@@ -62,7 +62,7 @@ module.exports = function getCommits(args, setting) {
     git.raw(['log', ...gitLogArgs, PrettyFormats.arg], (err, result) => {
       if (err) throw err;
 
-      let tagCommitObjList = splitCommitByTag(PrettyFormats.parse(result));
+      let tagCommitObjList = splitCommitByTag(PrettyFormats.parse(result), setting);
 
       if (args.latest) {
         tagCommitObjList = tagCommitObjList.splice(0, 1);

@@ -1,36 +1,9 @@
 [
   {
     "tag": "",
-    "timestamp": "1550226333",
-    "commitHash": "92d9207371485ca34176738723155a5fd9771759",
+    "timestamp": "1550221222",
+    "commitHash": "27fb5c490ca1849931864f984a8da5faf6cf100b",
     "commits": [
-      {
-        "H": "92d9207371485ca34176738723155a5fd9771759",
-        "h": "92d9207",
-        "T": "805fbfab08e0704e20db96783dc7b96211c9ed54",
-        "t": "805fbfa",
-        "P": "27fb5c490ca1849931864f984a8da5faf6cf100b",
-        "p": "27fb5c4",
-        "an": "BearJ",
-        "ae": "bearyanjh@foxmail.com",
-        "ad": "Fri Feb 15 18:25:33 2019 +0800",
-        "ar": "49 minutes ago",
-        "at": "1550226333",
-        "ai": "2019-02-15 18:25:33 +0800",
-        "cn": "BearJ",
-        "ce": "bearyanjh@foxmail.com",
-        "cd": "Fri Feb 15 18:25:33 2019 +0800",
-        "cr": "49 minutes ago",
-        "ct": "1550226333",
-        "ci": "2019-02-15 18:25:33 +0800",
-        "d": " (HEAD -> master)",
-        "e": "",
-        "s": "split the code",
-        "f": "split-the-code",
-        "b": "",
-        "B": "split the code\n",
-        "N": ""
-      },
       {
         "H": "27fb5c490ca1849931864f984a8da5faf6cf100b",
         "h": "27fb5c4",
@@ -146,7 +119,15 @@
         "b": "",
         "B": "0.3.2\n",
         "N": ""
-      },
+      }
+    ],
+    "previousTag": "bugfix"
+  },
+  {
+    "tag": "bugfix",
+    "timestamp": "1550065429",
+    "commitHash": "3950ac5d466c2ca0b62f433831af4e47e9e9e8fd",
+    "commits": [
       {
         "H": "3950ac5d466c2ca0b62f433831af4e47e9e9e8fd",
         "h": "3950ac5",
@@ -262,7 +243,15 @@
         "b": "",
         "B": "use more detail in readme\n",
         "N": ""
-      },
+      }
+    ],
+    "previousTag": "changelog"
+  },
+  {
+    "tag": "changelog",
+    "timestamp": "1550062380",
+    "commitHash": "e891f96188beda446c123ffc5a11f666e19b09bf",
+    "commits": [
       {
         "H": "e891f96188beda446c123ffc5a11f666e19b09bf",
         "h": "e891f96",
