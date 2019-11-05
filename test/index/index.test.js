@@ -11,7 +11,6 @@ test('Test index.js', () => new Promise((resolve) => {
   picklog({
     gitLogArgs: 'v1.2.3',
   }).then((text) => {
-    fs.writeFileSync('output.md', text);
     expect(text).toBe(output);
     resolve();
   });

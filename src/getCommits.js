@@ -27,13 +27,20 @@ function gitLogLoop(tagCommitObjList) {
           return;
         }
 
-        git.raw(['log', `${tagCommitObj.tag || ''}...${tagCommitObj.previousTag || ''}`, PrettyFormats.arg], (loopErr, loopResult) => {
+        let logSelection = '';
+        if (tagCommitObj.previousTag) {
+          logSelection = `${tagCommitObj.tag || ''}...${tagCommitObj.previousTag}`;
+        } else {
+          logSelection = `${tagCommitObj.tag || ''}...${tagCommitObj.commits[tagCommitObj.commits.length - 1].H}`;
+        }
+
+        git.raw(['log', logSelection, PrettyFormats.arg], (loopErr, loopResult) => {
           if (loopErr) throw loopErr;
 
           const commits = PrettyFormats.parse(loopResult);
           let mergeCommits = tagCommitObj.commits.concat(commits);
 
-          spinner.text = `Loading logs between ${tagCommitObj.tag || ''} and ${tagCommitObj.previousTag || ''} , Progress: ${index + 1}/${tagCommitObjList.length - 1}`;
+          spinner.text = `Loading logs ${logSelection} , Progress: ${index + 1}/${tagCommitObjList.length - 1}`;
 
           mergeCommits = mergeCommits
             .sort((commitA, commitB) => commitB.ct - commitA.ct)
