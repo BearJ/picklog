@@ -1,3 +1,10 @@
+### [v2.2.1](https://BearJ@github.com/BearJ/picklog/compare/v2.2.0...v2.2.1) (2020-03-12)
+
+#### Bugfixes
+* null报错([72bad41](https://BearJ@github.com/BearJ/picklog/commit/72bad41))
+
+
+
 ### [v2.2.0](https://BearJ@github.com/BearJ/picklog/compare/v2.1.4...v2.2.0) (2019-11-05)
 
 #### Features
