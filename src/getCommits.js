@@ -37,6 +37,11 @@ function gitLogLoop(tagCommitObjList) {
         git.raw(['log', logSelection, PrettyFormats.arg], (loopErr, loopResult) => {
           if (loopErr) throw loopErr;
 
+          if (!loopResult) {
+            loopResolve();
+            return;
+          }
+
           const commits = PrettyFormats.parse(loopResult);
           let mergeCommits = tagCommitObj.commits.concat(commits);
 
