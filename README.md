@@ -1,6 +1,5 @@
 Picklog
 ====
-[![Build Status](https://travis-ci.org/BearJ/picklog.svg?branch=master)](https://travis-ci.org/BearJ/picklog)
 [![npm version](https://img.shields.io/npm/v/picklog.svg)](https://www.npmjs.org/package/picklog)
 
 根据你设置的filter，提取出你需要的log，从而生成changelog。可以生成`JSON`或`markdown`。

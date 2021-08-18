@@ -46,6 +46,8 @@ module.exports = {
   arg: `--pretty=${Object.values(format).join(SPLIT)}${END}`,
 
   parse(result) {
+    if (!result) return [];
+
     const keys = Object.keys(format);
     const commitsStr = result.trim();
     if (!commitsStr.length) return [];

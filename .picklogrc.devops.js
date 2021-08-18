@@ -3,21 +3,29 @@ module.exports = {
     {
       name: 'Changes',
       regExp: /[\u4e00-\u9fa5]/,
-    }
+    },
   ],
   parse(commits){
-    let output = '';
+    const feats = []
+    const fixs = []
+    const others = []
 
     commits.forEach((log) => {
       log.results.forEach((result) => {
-        output += `${result.filter.name}:\n`;
-
         result.commits.forEach((commit) => {
-          output += `- ${commit.s} ${commit.an}\n`;
+          const logText = `- ${commit.s} ${commit.an}`
+
+          if (/feat/.test(commit.s)) {
+            feats.push(logText)
+          } else if (/fix/.test(commit.s)) {
+            fixs.push(logText)
+          } else {
+            others.push(logText)
+          }
         });
       });
     });
 
-    return output;
+    return `${feats.join('\n')}\n\n${fixs.join('\n')}\n\n${others.join('\n')}`;
   }
 };
