@@ -8,12 +8,15 @@ function picklog(_args) {
     gitLogArgs: '', // 透传给命令 git log 的参数
     latest: false, // 是否只取上一个tag后的commit
   }, _args);
+
+  const picklogrc = args.config || '.picklogrc.js';
+
   let setting;
   let pkg;
 
   try {
-    fs.accessSync(path.resolve('.picklogrc.js'));
-    setting = require(path.resolve('.picklogrc.js')); // eslint-disable-line global-require,import/no-dynamic-require
+    fs.accessSync(path.resolve(picklogrc));
+    setting = require(path.resolve(picklogrc)); // eslint-disable-line global-require,import/no-dynamic-require
 
     fs.accessSync(path.resolve('package.json'));
     pkg = require(path.resolve('package.json')); // eslint-disable-line global-require,import/no-dynamic-require

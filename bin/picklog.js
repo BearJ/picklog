@@ -42,6 +42,10 @@ const { argv } = yargs
   .option('o', {
     alias: 'overwrite',
     describe: 'Overwrite stdout to this file.',
+  })
+  .option('c', {
+    alias: 'config',
+    describe: 'Custom config file. (Default ".picklogrc")',
   });
 
 if (argv._.indexOf('init') > -1) {

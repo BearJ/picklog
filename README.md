@@ -49,6 +49,12 @@ $ picklog -o CHANGELOG.md
 
   e.g: `picklog -g v2.0.0 -w CHANGELOG.md`
 
+- **`-c` or `--config`**
+
+  指定配置文件，默认是`.picklogrc.js` ( Custom config file. Default ".picklogrc" )
+
+  e.g: `picklog -c .picklogrc.dev.js`
+
 
 ### API
 ```javascript
