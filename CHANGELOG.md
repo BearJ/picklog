@@ -1,3 +1,10 @@
+### [v2.3.1](https://BearJ@github.com/BearJ/picklog/compare/v2.3.0...v2.3.1) (2021-08-18)
+
+#### Bugfixes
+* result为空的时候报错([4958c8a](https://BearJ@github.com/BearJ/picklog/commit/4958c8a))
+
+
+
 ### [v2.3.0](https://BearJ@github.com/BearJ/picklog/compare/v2.2.1...v2.3.0) (2021-08-18)
 
 #### Features
