@@ -1,3 +1,10 @@
+### [v2.3.0](https://BearJ@github.com/BearJ/picklog/compare/v2.2.1...v2.3.0) (2021-08-18)
+
+#### Features
+* 新增指定配置文件的能力([5f6590c](https://BearJ@github.com/BearJ/picklog/commit/5f6590c))
+
+
+
 ### [v2.2.1](https://BearJ@github.com/BearJ/picklog/compare/v2.2.0...v2.2.1) (2020-03-12)
 
 #### Bugfixes
