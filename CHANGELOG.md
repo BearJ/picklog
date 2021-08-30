@@ -1,3 +1,10 @@
+### [v2.3.2](https://BearJ@github.com/BearJ/picklog/compare/v2.3.1...v2.3.2) (2021-08-30)
+
+#### Bugfixes
+* 如果没有上一个tag，则不需要迭代了。因为迭代会出很多过往的log，但其实并不是这次查log中需要的([6882d99](https://BearJ@github.com/BearJ/picklog/commit/6882d99))
+
+
+
 ### [v2.3.1](https://BearJ@github.com/BearJ/picklog/compare/v2.3.0...v2.3.1) (2021-08-18)
 
 #### Bugfixes

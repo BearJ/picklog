@@ -1,6 +1,6 @@
 {
   "name": "picklog",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Pickup the logs that you filter, so you can generation changelog from it.",
   "main": "index.js",
   "scripts": {
