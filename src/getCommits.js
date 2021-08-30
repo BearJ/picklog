@@ -22,7 +22,7 @@ function gitLogLoop(tagCommitObjList) {
       return new Promise(async (loopResolve) => {
         const tagCommitObj = tagCommitObjList[index];
 
-        if (index > tagCommitObjList.length - 1) {
+        if (index >= tagCommitObjList.length || !tagCommitObj.previousTag) {
           loopResolve();
           return;
         }
@@ -30,8 +30,6 @@ function gitLogLoop(tagCommitObjList) {
         let logSelection = '';
         if (tagCommitObj.previousTag) {
           logSelection = `${tagCommitObj.tag || ''}...${tagCommitObj.previousTag}`;
-        } else {
-          logSelection = `${tagCommitObj.tag || ''}...${tagCommitObj.commits[tagCommitObj.commits.length - 1].H}`;
         }
 
         git.raw(['log', logSelection, PrettyFormats.arg], (loopErr, loopResult) => {
